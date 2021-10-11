@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Super Heroes API</h2>
+<a asp-action="SearchHero" class="btn btn-sm btn-primary">Search Hero</a>
+<form method="post">
+    <div class="form-group">
+        <label for="id">Id:</label>
+        <input class="form-control" name="id" />
+       
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Get Super Heroe</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Super Heroe</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Powerstats</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.id</td>
+                <td>@Model.name</td>
+            </tr>
+        </tbody>
+    </table>
+}
